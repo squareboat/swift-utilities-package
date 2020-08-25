@@ -31,7 +31,7 @@ public class ThreadingUtils {
     /// - Parameters:
     ///   - delay: delay in seconds
     ///   - closure:
-    func delay(delay:Double, perform: @escaping () -> Void) {
+    class func delay(delay:Double, perform: @escaping () -> Void) {
         DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: perform)
     }
 }

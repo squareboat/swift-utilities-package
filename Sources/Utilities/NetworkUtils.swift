@@ -12,7 +12,7 @@ public class NetworkUtils {
     /// Helper method to check whether the device has an active internet connection available
     ///
     /// - Returns: Boolean value whether the device has an active internet connection or not
-    func isInternetAvailable() -> Bool {
+    class func isInternetAvailable() -> Bool {
         var zeroAddress = sockaddr_in()
         zeroAddress.sin_len = UInt8(MemoryLayout.size(ofValue: zeroAddress))
         zeroAddress.sin_family = sa_family_t(AF_INET)
