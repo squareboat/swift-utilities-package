@@ -27,15 +27,11 @@ public extension UITextField {
     ///        textField.hasValidEmail -> false
     ///
     var hasValidEmail: Bool {
-        return text!.range(of: "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}",
-                           options: String.CompareOptions.regularExpression,
-                           range: nil, locale: nil) != nil
+        return Validators.isValidEmailAddress(emailId: text ?? "")
     }
     
     var hasValidPhoneNumber: Bool {
-        let phoneRegex = "^[1-9]{1}[0-9]{9}$"
-        let phoneTest = NSPredicate(format: "SELF MATCHES %@", phoneRegex)
-        return phoneTest.evaluate(with: text ?? "")
+        return Validators.isValidPhoneNumber(number: text ?? "")
     }
     
     /// Left view tint color.

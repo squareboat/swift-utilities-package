@@ -155,6 +155,20 @@ public extension UIView {
         layer.masksToBounds = false
     }
     
+    /// Add Dashed border to view.
+    ///
+    /// - Parameters:
+    ///   - color: border color (default is UIColor.lightGray).
+    func setDashedBoder(color: UIColor = .lightGray){
+        let yourViewBorder = CAShapeLayer()
+        yourViewBorder.strokeColor = color.cgColor
+        yourViewBorder.lineDashPattern = [6, 6]
+        yourViewBorder.fillColor = nil
+        yourViewBorder.frame = bounds
+        yourViewBorder.path = UIBezierPath.init(roundedRect: bounds, cornerRadius: 4).cgPath
+        layer.addSublayer(yourViewBorder)
+    }
+    
     /// Add array of subviews to view.
     ///
     /// - Parameter subviews: array of subviews to add to self.

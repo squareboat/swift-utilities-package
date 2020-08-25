@@ -86,7 +86,7 @@ public extension UIViewController {
     /// - Parameters:
     ///   - color: the tint color of indicator
     func showLoader(color: UIColor? = nil) {
-        let window = APP.windows.first
+        let window = UIApplication.shared.windows.first
         let hud = MBProgressHUD.showAdded(to: window!, animated: true)
         guard let hudColor = color else { return }
         hud.contentColor = hudColor
@@ -94,7 +94,7 @@ public extension UIViewController {
     
     /// Helper method to dismiss Progress HUD
     func hideLoader() {
-        let window = APP.windows.first
+        let window = UIApplication.shared.windows.first
         MBProgressHUD.hide(for: window!, animated: true)
     }
     
@@ -102,7 +102,7 @@ public extension UIViewController {
     /// - Parameters:
     ///   - itemsToShare: An array of items to share
     func openShareActivity(itemsToShare : [Any]) {
-        let controller = APP.windows.first?.rootViewController
+        let controller = UIApplication.shared.windows.first?.rootViewController
         let activityViewController = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
         activityViewController.popoverPresentationController?.sourceView = controller?.view
         controller?.present(activityViewController, animated: true, completion: nil)

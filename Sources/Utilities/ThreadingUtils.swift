@@ -26,4 +26,12 @@ public class ThreadingUtils {
             }
         }
     }
+    
+    /// A utility method to do something after a delay
+    /// - Parameters:
+    ///   - delay: delay in seconds
+    ///   - closure:
+    func delay(delay:Double, perform: @escaping () -> Void) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: perform)
+    }
 }
