@@ -14,7 +14,7 @@ Once you have your Swift package set up, adding Utilities as a dependency is as 
 ```swift
 
 dependencies: [
-.package(url: "https://github.com/Root-vb/swift-utilities-package.git", .branch("master")
+.package(url: "https://github.com/Root-vb/swift-utilities-package.git", .upToNextMajor(from: "1.0.0"))
 ]
 
 ```
@@ -284,5 +284,5 @@ Pull requests are welcome. For major changes, please open an issue first to disc
 
 Please make sure to update tests as appropriate.
 
-<!-- ## License -->
-<!-- Utilities is released under the MIT license. [See LICENSE](https://choosealicense.com/licenses/mit/) for details. -->
+## License
+Utilities is released under the MIT license. [See LICENSE](https://github.com/Root-vb/swift-utilities-package/blob/master/LICENSE) for details.
