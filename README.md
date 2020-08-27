@@ -27,10 +27,10 @@ import Utilities
 /* Networking */
 NetworkUtils.isInternetAvailable() // returns true or false depending upon the device internet connection status
 
-/* Validators Exaple */
+/* Validators Example */
 Validators.isValidEmailAddress(emailId: "example@squareboat.com") // returns true
 
-/* Calendar Exaple */
+/* Calendar Example */
 CalendarUtils.getTimeDifferenceString(timestampString: "1598255182") // returns something like 3 weeks ago
 
 /* Network Image with caching. Extension method on UIImageView */
