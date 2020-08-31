@@ -14,7 +14,7 @@ Once you have your Swift package set up, adding Utilities as a dependency is as 
 ```swift
 
 dependencies: [
-.package(url: "https://github.com/Root-vb/swift-utilities-package.git", .upToNextMajor(from: "1.0.0"))
+    .package(url: "https://github.com/Root-vb/swift-utilities-package.git", .upToNextMajor(from: "1.0.1"))
 ]
 
 ```
@@ -232,6 +232,44 @@ public class func getActualDifferenceBetweenTwoDates(date1 : Date, date2 : Date)
 class func getDateAfterSomedays(daysToAdd : Int, dateToAdd : Date!) -> Date!
 
 class func getTimeDifferenceString(timestampString : String) -> String
+```
+
+### DictionaryDecoder
+```
+func decode<T>(_ type: T.Type, from json: [String:Any]) throws -> T where T: Decodable
+
+// Usage Example
+struct Example: Decodable {
+    // ...
+}
+
+let dictionay = [
+    ///
+]
+
+do {
+    let decodedExample = try DictionaryDecoder().decode(Example.self, from: dictionary) /// return an object
+} catch (let decodingError) {
+    print(decodingError)
+}
+```
+
+### DictionaryEncoder
+```
+func encode<T>(_ value: T) throws -> [String:Any] where T: Encodable
+
+// Usage Example
+struct Example: Encodable {
+    // ...
+}
+
+let example = Example() /// Encodable object
+
+do {
+    let dictionary = try DictionaryEncoder().encode(example) /// return a dictionary
+} catch (let encodingError) {
+    print(encodingError)
+}
 ```
 
 ### ImageUtils
