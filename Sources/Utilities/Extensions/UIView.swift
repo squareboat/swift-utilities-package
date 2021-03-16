@@ -176,6 +176,11 @@ public extension UIView {
         subviews.forEach { addSubview($0) }
     }
     
+	/// Clear/Remove subviews of a view
+	func clearSubviews() {
+		self.subviews.forEach { $0.removeFromSuperview() }
+	}
+	
     /// Fade in view.
     ///
     /// - Parameters:
